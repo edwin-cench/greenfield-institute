@@ -67,4 +67,4 @@ Email: student@greenfield.com
 
 Password: password123
 
-Developed by Edwin Muriithi Mwangi and his team as a robust three-tier educational management system.
+Developed by group 6 as a robust three-tier educational management system.
