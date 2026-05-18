@@ -30,7 +30,8 @@
         <div class="w-full px-6 lg:px-12 bg-indigo-800 border-t border-indigo-600">
             <div class="flex space-x-8 text-sm font-medium">
                 @if(Auth::user()->role === 'admin')
-                    <a href="/admin" class="hover:text-white py-3 {{ request()->is('admin') ? 'text-white border-b-2 border-white' : 'text-indigo-300' }}">Admin Control Panel</a>
+                    <a href="/admin" class="hover:text-white py-3 {{ request()->is('admin') ? 'text-white border-b-2 border-white' : 'text-indigo-300' }}">Course Catalog</a>
+                    <a href="/admin/students" class="hover:text-white py-3 {{ request()->is('admin/students') ? 'text-white border-b-2 border-white' : 'text-indigo-300' }}">Manage Students</a>
                 @else
                     <a href="/dashboard" class="hover:text-white py-3 {{ request()->is('dashboard') ? 'text-white border-b-2 border-white' : 'text-indigo-300' }}">Course Dashboard</a>
                     <a href="/academics" class="hover:text-white py-3 {{ request()->is('academics') ? 'text-white border-b-2 border-white' : 'text-indigo-300' }}">Academics & Results</a>

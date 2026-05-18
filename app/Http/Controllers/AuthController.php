@@ -52,27 +52,27 @@ class AuthController extends Controller
         return view('register');
     }
 
-    // Process the registration attempt
-    public function register(Request $request)
+   public function register(Request $request)
     {
-        // 1. Validate the user's input
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'], // 'confirmed' expects a 'password_confirmation' field
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
 
-        // 2. Create the user in the database
+        // Auto-generate a Registration Number
+        $regNumber = 'GF-' . date('Y') . '-' . rand(1000, 9999);
+
         $user = \App\Models\User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => bcrypt($request->password), // Securely hash the password
+            'password' => bcrypt($request->password),
+            'role' => 'student',
+            'reg_number' => $regNumber,
         ]);
 
-        // 3. Log the user in immediately
         Auth::login($user);
 
-        // 4. Redirect to the dashboard
-        return redirect('/dashboard')->with('success', 'Account created successfully! Welcome to Greenfield Institute.');
+        return redirect('/dashboard')->with('success', "Account created! Your Registration Number is: {$regNumber}");
     }
 }
