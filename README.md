@@ -28,7 +28,7 @@ Since this is a Laravel application, setup is fast and automated.
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/edwin-cench/greenfield-institue.git](https://github.com/edwin-cench/greenfield-institute.git)
+   git clone [https://github.com/edwin-cench/greenfield-institute](https://github.com/edwin-cench/greenfield-institute)
    cd Greenfield
 Install dependencies:
 
